@@ -1,25 +1,37 @@
+import AOS from 'aos';
 import React from 'react';
-import logo from './logo.svg';
 
 import './App.scss';
+import 'aos/dist/aos.css';
+
+AOS.init({
+  once: false,
+  mirror: true,
+});
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <div>Home</div>
+        <div>About</div>
+        <div>Contact</div>
+      </div>
+      <div className="container">
+        <div className="container-content container-content--green">
+          <div data-aos="fade-up">I am stuff</div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="container-content">
+          <div data-aos="fade-in">I am more stuff</div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="container-content container-content--green">
+          <div data-aos="fade-up">I am even more stuff</div>
+        </div>
+      </div>
     </div>
   );
 }
