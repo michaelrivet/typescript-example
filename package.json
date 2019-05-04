@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/aos": "^3.0.1",
+    "@types/enzyme": "^3.9.1",
     "@types/jest": "24.0.12",
     "@types/node": "11.13.9",
     "@types/react": "16.8.15",
@@ -37,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "react-test-renderer": "^16.8.6"
   }
 }
