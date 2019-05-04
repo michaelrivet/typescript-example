@@ -1,7 +1,8 @@
 import AOS from 'aos';
 import React from 'react';
+import Container from './components/Container';
 
-import './App.scss';
+import './_app.scss';
 import 'aos/dist/aos.css';
 
 AOS.init({
@@ -17,21 +18,18 @@ const App: React.FC = () => {
         <div>About</div>
         <div>Contact</div>
       </div>
-      <div className="container">
-        <div className="container-content container-content--green">
-          <div data-aos="fade-up">I am stuff</div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="container-content">
-          <div data-aos="fade-in">I am more stuff</div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="container-content container-content--green">
-          <div data-aos="fade-up">I am even more stuff</div>
-        </div>
-      </div>
+      <Container isFullScreen displayType="primary">
+        <div data-aos="fade-up">I am stuff</div>
+      </Container>
+      <Container isFullScreen displayType="transparent">
+        <div data-aos="fade-up">I am more stuff</div>
+      </Container>
+      <Container isFullScreen displayType="secondary">
+        <div data-aos="fade-up">I am even more stuff</div>
+      </Container>
+      <Container displayType="inverse">
+        <div data-aos="fade-up">I am even more stuff</div>
+      </Container>
     </div>
   );
 }
