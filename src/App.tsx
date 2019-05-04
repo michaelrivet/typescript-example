@@ -24,10 +24,10 @@ const App: React.FC = () => {
       <Container isFullScreen displayType="transparent">
         <div data-aos="fade-up">I am more stuff</div>
       </Container>
-      <Container isFullScreen displayType="secondary">
+      <Container  displayType="secondary">
         <div data-aos="fade-up">I am even more stuff</div>
       </Container>
-      <Container displayType="inverse">
+      <Container isFullScreen displayType="inverse">
         <div data-aos="fade-up">I am even more stuff</div>
       </Container>
     </div>
