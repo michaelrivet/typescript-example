@@ -13,13 +13,10 @@ export interface ContainerProps {
 class Container extends React.PureComponent<ContainerProps> {
     render() : React.ReactNode {
         const { isFullScreen, displayType, imageBackground, children } = this.props;
-        const containerClassNames = classNames('container', {'container--fullscreen': !!isFullScreen});
-        const contentClassNames = classNames('container-content', `container-content--${displayType}`)
+        const containerClassNames = classNames('container', `container--${displayType}`, {'container--fullscreen': !!isFullScreen});
         return (
             <div className={containerClassNames}>
-                <div className={contentClassNames}>
-                    {children}
-                </div>
+                {children}
             </div>
         )
     }
