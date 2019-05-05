@@ -27,4 +27,9 @@ describe('the Container component', () => {
     const mount = shallow(<Container isFullScreen displayType={"primary"}><div></div></Container>);
     expect(mount.find('div.container').hasClass('container--fullscreen')).toBe(true);
   });
+
+  it('renders the children', () => {
+    const mount = shallow(<Container isFullScreen displayType={"primary"}><div className="child"></div></Container>);
+    expect(mount.find('div.child')).not.toBeNull;
+  });
 })
