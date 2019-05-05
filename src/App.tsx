@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import React from 'react';
-import Container from './components/Container';
+import Container from './components/container/Container';
 
 import './_app.scss';
 import 'aos/dist/aos.css';
