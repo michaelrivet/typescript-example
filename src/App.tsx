@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import React from 'react';
 import Container from './components/container/Container';
+import Navbar from './components/navbar/Navbar';
 
 import './_app.scss';
 import 'aos/dist/aos.css';
@@ -13,11 +14,7 @@ AOS.init({
 const App: React.FC = () => {
   return (
     <div className="App">
-      <div className="header">
-        <div>Home</div>
-        <div>About</div>
-        <div>Contact</div>
-      </div>
+      <Navbar/>
       <Container isFullScreen displayType="primary">
         <div data-aos="fade-up">I am stuff</div>
       </Container>
