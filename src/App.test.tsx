@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
+import Container from './components/container/Container';
 
 describe('the App component', () => {
-  it('renders without crashing', () => {
+  it('renders', () => {
     const mount = shallow(<App />);
     expect(mount).not.toBeNull();
   });
@@ -13,8 +14,8 @@ describe('the App component', () => {
     expect(mount.find('div.header')).not.toBeNull();
   });
   
-  it('renders three containers', () => {
+  it('renders four containers', () => {
     const mount = shallow(<App />);
-    expect(mount.find('div.container')).toHaveLength(3);
+    expect(mount.find(Container)).toHaveLength(4);
   });
 })
