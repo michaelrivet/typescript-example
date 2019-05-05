@@ -4,7 +4,7 @@ import App from './App';
 import Container from './components/Container';
 
 describe('the App component', () => {
-  it('renders without crashing', () => {
+  it('renders', () => {
     const mount = shallow(<App />);
     expect(mount).not.toBeNull();
   });
