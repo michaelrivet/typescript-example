@@ -10,15 +10,15 @@ describe('the Navbar component', () => {
   });
 
   it('renders', () => {
-    const mount = shallow(<Navbar displayType="default" links={[]} />);
+    const mount = shallow(<Navbar links={links} />);
     expect(mount).not.toBeNull();
   });
 
   describe('the displayType class', () => {
-      const testCases: NavbarProps['displayType'][] = ['default', 'narrow', 'wide'];
+      const testCases: NavbarProps['displayType'][] = ['narrow', 'wide'];
       testCases.forEach(displayType => {
         it(`adds the navbar--${displayType} class`, () => {
-            const mount = shallow(<Navbar displayType={displayType} links={[]}/>);
+            const mount = shallow(<Navbar displayType={displayType} links={links}/>);
             expect(mount.find('div.navbar').hasClass(`navbar--${displayType}`)).toBe(true);
         })
     })
@@ -30,7 +30,7 @@ describe('the Navbar component', () => {
       {displayText: 'About', uri: '/about/'},
       {displayText: 'Contact', uri: '/contact/'},
     ]
-    const mount = shallow(<Navbar displayType="default" links={[]} />);
+    const mount = shallow(<Navbar links={links} />);
     expect(mount).not.toBeNull();
     expect(mount.find('a')).toHaveLength(3);
   });

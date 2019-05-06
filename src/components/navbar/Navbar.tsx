@@ -10,20 +10,18 @@ export interface Link {
 }
 
 export interface NavbarProps {
-    displayType: "default" | "narrow" | "wide",
+    displayType?: "narrow" | "wide",
     links: Link[],
 }
 
 class Navbar extends React.PureComponent<NavbarProps> {
     render() :React.ReactNode {
         const { displayType, links } = this.props;
-        const navbarClasses = classNames('navbar', `navbar--${displayType}`);
+        const navbarClasses = classNames('navbar', {[`navbar--${displayType}`]: !!displayType });
 
         return (
             <div className={navbarClasses}>
-                <div>Home</div>
-                <div>About</div>
-                <div>Contact</div>
+                {links.map(link => (<a href={link.uri} className="navbar-link" >{link.displayText}</a>))}
             </div>
         )
     }

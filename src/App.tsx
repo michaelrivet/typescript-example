@@ -12,9 +12,15 @@ AOS.init({
 });
 
 const App: React.FC = () => {
+  const navbarLinks = [
+    {displayText: 'Home', uri: '/'},
+    {displayText: 'About', uri: '/about/'},
+    {displayText: 'Contact', uri: '/contact/'},
+  ];
+
   return (
     <div className="App">
-      <Navbar displayType="default" links={[]} />
+      <Navbar links={navbarLinks} displayType="wide" />
       <Container isFullScreen displayType="primary">
         <div data-aos="fade-up">I am stuff</div>
       </Container>
