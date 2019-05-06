@@ -16,8 +16,11 @@ export interface NavbarProps {
 
 class Navbar extends React.PureComponent<NavbarProps> {
     render() :React.ReactNode {
+        const { displayType, links } = this.props;
+        const navbarClasses = classNames('navbar', `navbar--${displayType}`);
+
         return (
-            <div className="navbar">
+            <div className={navbarClasses}>
                 <div>Home</div>
                 <div>About</div>
                 <div>Contact</div>
