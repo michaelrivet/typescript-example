@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import Container from './components/container/Container';
+import Container from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 
 describe('the App component', () => {

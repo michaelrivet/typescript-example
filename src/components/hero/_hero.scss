@@ -1,23 +1,23 @@
 
-.container {
+.hero {
     position: relative;
     width: 100%;
-    padding: 2rem 0;
+    padding: 4rem 0;
 
     &--fullscreen {
         height: 100vh;
     }
   
     &--primary {
-        background-color: white;
+        background-color: #ffffff;
     }
 
     &--secondary {
-        background-color: green;
+        background-color: #b5cc18;
     }
 
     &--inverse {
-        color: white;
-        background-color: darkslategray;
+        color: #ffffff;
+        background-color: #1b1c1d;
     }
 }

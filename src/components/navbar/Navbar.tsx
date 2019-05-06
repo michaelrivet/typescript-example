@@ -1,27 +1,29 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Menu } from 'semantic-ui-react'
 
 import './_navbar.scss';
 
 export interface Link {
     displayText: string,
     uri: string,
+    isActive?: boolean,
 }
 
 export interface NavbarProps {
-    displayType?: "narrow" | "wide",
     links: Link[],
+    isSticky?: boolean,
 }
 
 class Navbar extends React.PureComponent<NavbarProps> {
     render() :React.ReactNode {
-        const { displayType, links } = this.props;
-        const navbarClasses = classNames('navbar', {[`navbar--${displayType}`]: !!displayType });
+        const { isSticky, links } = this.props;
+        const navbarClasses = classNames('navbar', {[`navbar--isFixed`]: !isSticky }, {[`navbar--isSticky`]: !!isSticky });
 
         return (
-            <div className={navbarClasses}>
-                {links.map(link => (<a href={link.uri} className="navbar-link" >{link.displayText}</a>))}
-            </div>
+            <Menu inverted fixed={isSticky ? 'top' : undefined} text={!isSticky} color={isSticky ? 'olive' : undefined} widths={3} borderless className={navbarClasses}>
+                {links.map(link => (<Menu.Item name={link.displayText} href={link.uri} active={!!link.isActive} />))}
+            </Menu>
         )
     }
 }
