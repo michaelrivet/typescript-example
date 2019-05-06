@@ -13,7 +13,7 @@ describe('the Container component', () => {
       testCases.forEach(displayType => {
         it(`adds the container--${displayType} class`, () => {
             const mount = shallow(<Container isFullScreen={false} displayType={displayType}><div></div></Container>);
-            expect(mount.find('div.container').hasClass('container--fullscreen')).toBe(false);
+            expect(mount.find('div.container').hasClass(`container--${displayType}`)).toBe(true);
         })
     })
   });
