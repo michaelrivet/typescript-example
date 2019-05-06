@@ -48,16 +48,19 @@ class App extends React.PureComponent {
             <div data-aos="fade-up">I am stuff</div>
           </Hero>
         </Visibility>
-        <Hero isFullScreen displayType="transparent">
+        <Hero isFullScreen displayType="primary">
           <Container fluid>
-            <div data-aos="fade-up">I am more stuff</div>
+            <div data-aos="fade-up">I am primary stuff</div>
           </Container>
         </Hero>
-        <Hero  displayType="secondary">
-          <div data-aos="fade-up">I am even more stuff</div>
+        <Hero displayType="secondary">
+          <div data-aos="fade-up">I am secondary stuff</div>
+        </Hero>
+        <Hero isFullScreen displayType="secondary" imageUrl="https://picsum.photos/id/2/1920/1080">
+          <div data-aos="fade-up">I am even more secondary stuff</div>
         </Hero>
         <Hero isFullScreen displayType="inverse">
-          <div data-aos="fade-up">I am even more stuff</div>
+          <div data-aos="fade-up">I am inverse stuff</div>
         </Hero>
       </div>
     );

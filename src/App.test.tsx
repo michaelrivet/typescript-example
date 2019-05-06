@@ -17,6 +17,6 @@ describe('the App component', () => {
   
   it('renders four containers', () => {
     const mount = shallow(<App />);
-    expect(mount.find(Container)).toHaveLength(4);
+    expect(mount.find(Container)).toHaveLength(5);
   });
 })
