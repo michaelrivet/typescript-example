@@ -1,15 +1,23 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './_navbar.scss';
+import { string } from 'prop-types';
 
-export interface NavbarProps {
-    children: React.ReactChild,
+export interface Link {
+    displayText: string,
+    uri: string,
 }
 
-class Navbar extends React.PureComponent {
+export interface NavbarProps {
+    displayType: "default" | "narrow" | "wide",
+    links: Link[],
+}
+
+class Navbar extends React.PureComponent<NavbarProps> {
     render() :React.ReactNode {
         return (
-            <div className="header">
+            <div className="navbar">
                 <div>Home</div>
                 <div>About</div>
                 <div>Contact</div>

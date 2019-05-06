@@ -14,7 +14,7 @@ AOS.init({
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar displayType="default" links={[]} />
       <Container isFullScreen displayType="primary">
         <div data-aos="fade-up">I am stuff</div>
       </Container>
