@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Navbar links={navbarLinks} displayType="wide" />
+      <Navbar links={navbarLinks} />
       <Container isFullScreen displayType="primary">
         <div data-aos="fade-up">I am stuff</div>
       </Container>

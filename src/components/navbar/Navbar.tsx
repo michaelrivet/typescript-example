@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 import './_navbar.scss';
-import { string } from 'prop-types';
 
 export interface Link {
     displayText: string,
