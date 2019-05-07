@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import React from 'react';
-import { Container, Visibility } from 'semantic-ui-react'
+import { Container, Visibility, Header, Icon } from 'semantic-ui-react'
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 
@@ -15,18 +15,18 @@ AOS.init({
 
 class App extends React.PureComponent {
   state = {
-    isStickyHeader: false,
+    isFixedHeader: false,
   }
 
-  setHeaderSticky = () => {
+  setHeaderFixed = () => {
     this.setState({
-      isStickyHeader: true,
+      isFixedHeader: true,
     })
   }
 
   setHeaderNormal = () => {
     this.setState({
-      isStickyHeader: false,
+      isFixedHeader: false,
     })
   }
 
@@ -38,14 +38,15 @@ class App extends React.PureComponent {
     ];
     return (
       <div className="App">
-        <Navbar links={navbarLinks} isSticky={this.state.isStickyHeader}></Navbar>
+        <Navbar links={navbarLinks} isFixed={this.state.isFixedHeader}></Navbar>
         <Visibility
           once={false}
-          onBottomPassed={this.setHeaderSticky}
+          onBottomPassed={this.setHeaderFixed}
           onBottomPassedReverse={this.setHeaderNormal}
         >
-          <Hero isFullScreen displayType="primary" imageUrl="https://picsum.photos/id/1/1920/1080">
-            <div data-aos="fade-up">I am stuff</div>
+          <Hero isFullScreen displayType="primary" imageUrl="https://picsum.photos/id/6/1920/1080">
+            <Header size="huge" color="olive">Michael Rivet</Header>
+            <Icon name='angle double down' color="olive" size="large" className="viewMore" />
           </Hero>
         </Visibility>
         <Hero isFullScreen displayType="primary">
@@ -56,10 +57,10 @@ class App extends React.PureComponent {
         <Hero displayType="secondary">
           <div data-aos="fade-up">I am secondary stuff</div>
         </Hero>
-        <Hero isFullScreen displayType="secondary" imageUrl="https://picsum.photos/id/2/1920/1080">
+        <Hero isFullScreen displayType="secondary" imageUrl="https://picsum.photos/id/1/1920/1080">
           <div data-aos="fade-up">I am even more secondary stuff</div>
         </Hero>
-        <Hero isFullScreen displayType="inverse">
+        <Hero displayType="inverse">
           <div data-aos="fade-up">I am inverse stuff</div>
         </Hero>
       </div>

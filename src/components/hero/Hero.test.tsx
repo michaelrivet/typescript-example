@@ -13,19 +13,19 @@ describe('the Hero component', () => {
       testCases.forEach(displayType => {
         it(`adds the Hero--${displayType} class`, () => {
             const mount = shallow(<Hero isFullScreen={false} displayType={displayType}><div></div></Hero>);
-            expect(mount.find('div.Hero').hasClass('Hero--fullscreen')).toBe(false);
+            expect(mount.find('div.hero').hasClass('hero--fullscreen')).toBe(false);
         })
     })
   });
 
   it('does not add the Hero--fullscreen class when isFullScreen is false', () => {
     const mount = shallow(<Hero isFullScreen={false} displayType={"primary"}><div></div></Hero>);
-    expect(mount.find('div.Hero').hasClass('Hero--fullscreen')).toBe(false);
+    expect(mount.find('div.hero').hasClass('hero--fullscreen')).toBe(false);
   });
 
   it('adds the Hero--fullscreen class when isFullScreen is true', () => {
     const mount = shallow(<Hero isFullScreen displayType={"primary"}><div></div></Hero>);
-    expect(mount.find('div.Hero').hasClass('Hero--fullscreen')).toBe(true);
+    expect(mount.find('div.hero').hasClass('hero--fullscreen')).toBe(true);
   });
 
   it('renders the children', () => {

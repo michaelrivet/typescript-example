@@ -2,3 +2,18 @@
   background-color: lightgrey;
   text-align: center;
 }
+
+.viewMore {
+  position: absolute;
+  bottom: 40px;
+  animation-name: viewMore;
+  animation-duration: 1s;
+  animation-direction: alternate;  
+  animation-iteration-count: infinite; 
+  animation-timing-function: step-middle;
+}
+
+@keyframes viewMore {
+  from { bottom: 40px; }
+  to { bottom: 50px; }
+}

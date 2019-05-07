@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Menu, SemanticWIDTHSNUMBER } from 'semantic-ui-react'
+import { Menu, SemanticWIDTHSNUMBER } from 'semantic-ui-react';
 
 import './_navbar.scss';
 
@@ -12,20 +12,20 @@ export interface Link {
 
 export interface NavbarProps {
     links: Link[],
-    isSticky?: boolean,
+    isFixed?: boolean,
 }
 
 class Navbar extends React.PureComponent<NavbarProps> {
     render() :React.ReactNode {
-        const { isSticky, links } = this.props;
-        const navbarClasses = classNames('navbar', {'navbar--isFixed': !isSticky }, {'navbar--isSticky': !!isSticky });
+        const { isFixed, links } = this.props;
+        const navbarClasses = classNames('navbar', {'navbar--default': !isFixed });
 
         return (
             <Menu 
                 inverted 
-                fixed={!!isSticky ? 'top' : undefined} 
-                text={!isSticky} 
-                color={!!isSticky ? 'olive' : undefined} 
+                fixed={!!isFixed ? 'top' : undefined} 
+                text={!isFixed} 
+                color={!!isFixed ? 'olive' : undefined} 
                 widths={links.length > 1 && links.length < 16 ? links.length as SemanticWIDTHSNUMBER : 16} 
                 borderless 
                 className={navbarClasses}

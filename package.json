@@ -2,6 +2,7 @@
   "name": "resume",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.michaelrivet.rocks/version-2",
   "dependencies": {
     "@types/aos": "^3.0.1",
     "@types/classnames": "^2.2.7",

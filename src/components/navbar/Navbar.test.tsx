@@ -14,26 +14,24 @@ describe('the Navbar component', () => {
     expect(mount).not.toBeNull();
   });
 
-  it('renders the sticky menu when isSticky is true', () => {
-    const mount = shallow(<Navbar links={links} isSticky={true}/>);
+  it('renders the sticky menu when isFixed is true', () => {
+    const mount = shallow(<Navbar links={links} isFixed={true}/>);
     
     const menu = mount.find('Menu');
     expect(menu.prop('fixed')).toBe('top');
     expect(menu.prop('text')).toBe(false);
     expect(menu.prop('color')).toBe('olive');
-    expect(menu.hasClass('navbar--isSticky')).toBe(true);
-    expect(menu.hasClass('navbar--isFixed')).toBe(false);
+    expect(menu.hasClass('navbar--default')).toBe(false);
   });
 
-  it('renders the fixed menu when isSticky is false', () => {
-    const mount = shallow(<Navbar links={links} isSticky={false}/>);
+  it('renders the fixed menu when isFixed is false', () => {
+    const mount = shallow(<Navbar links={links} isFixed={false}/>);
     
     const menu = mount.find('Menu');
     expect(menu.prop('fixed')).toBe(undefined);
     expect(menu.prop('text')).toBe(true);
     expect(menu.prop('color')).toBe(undefined);
-    expect(menu.hasClass('navbar--isSticky')).toBe(false);
-    expect(menu.hasClass('navbar--isFixed')).toBe(true);
+    expect(menu.hasClass('navbar--default')).toBe(true);
   });
 
   it('renders the correct links', () => {

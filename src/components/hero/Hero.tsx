@@ -6,7 +6,7 @@ import './_hero.scss';
 export interface HeroProps {
     isFullScreen?: boolean,
     displayType: "primary" | "secondary" | "inverse" | "transparent",
-    children: React.ReactChild,
+    children: React.ReactChild | React.ReactChild[],
     imageUrl?: string,
 }
 
