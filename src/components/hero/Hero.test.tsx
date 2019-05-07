@@ -32,4 +32,15 @@ describe('the Hero component', () => {
     const mount = shallow(<Hero isFullScreen displayType={"primary"}><div className="child"></div></Hero>);
     expect(mount.find('div.child')).not.toBeNull;
   });
+
+  it('adds the imageUrl to the div background-image', () => {
+    const mount = shallow(<Hero isFullScreen displayType={"primary"} imageUrl="www.foo.com/img.png"><div></div></Hero>);
+    console.log(mount.find('div.hero').prop('style'));
+    expect(mount.find('div.hero').prop('style')).toEqual({
+      "backgroundImage": "url(www.foo.com/img.png)", 
+      "backgroundPosition": "center center",
+      "backgroundRepeat": "no-repeat", 
+      "backgroundSize": "cover"
+    });
+  })
 })
