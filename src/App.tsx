@@ -18,17 +18,8 @@ class App extends React.PureComponent {
     isFixedHeader: false,
   }
 
-  setHeaderFixed = () => {
-    this.setState({
-      isFixedHeader: true,
-    })
-  }
-
-  setHeaderNormal = () => {
-    this.setState({
-      isFixedHeader: false,
-    })
-  }
+  setHeaderFixed = () => { this.setState({ isFixedHeader: true }) }
+  setHeaderNormal = () => { this.setState({ isFixedHeader: false }) }
 
   render(): React.ReactElement {
     const navbarLinks = [
