@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-import Container from './components/container/Container';
+import Hero from './components/hero/Hero';
+import Navbar from './components/navbar/Navbar';
 
 describe('the App component', () => {
   it('renders', () => {
@@ -9,13 +10,13 @@ describe('the App component', () => {
     expect(mount).not.toBeNull();
   });
   
-  it('renders a header', () => {
+  it('renders a Navbar component', () => {
     const mount = shallow(<App />);
-    expect(mount.find('div.header')).not.toBeNull();
+    expect(mount.find(Navbar)).not.toBeNull();
   });
   
-  it('renders four containers', () => {
+  it('renders four Hero components', () => {
     const mount = shallow(<App />);
-    expect(mount.find(Container)).toHaveLength(4);
+    expect(mount.find(Hero)).toHaveLength(5);
   });
 })

@@ -1,0 +1,29 @@
+
+.hero {
+    position: relative;
+    width: 100%;
+    padding: 4rem 0;
+    min-height: 100px;
+
+    &--fullscreen {
+        padding-top: 16rem;
+        height: 100vh;
+    }
+  
+    &--primary {
+        background-color: #ffffff;
+    }
+
+    &--secondary {
+        background-color: #b5cc18;
+    }
+
+    &--inverse {
+        color: #ffffff;
+        background-color: #1b1c1d;
+    }  
+    
+    .ui.huge.header {
+        font-size: 4rem;
+    }
+}
