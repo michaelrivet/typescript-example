@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Visibility, Header, Icon } from 'semantic-ui-react'
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 
 import './_app.scss';
 import 'aos/dist/aos.css';
@@ -27,6 +28,12 @@ class App extends React.PureComponent {
       {displayText: 'About', uri: '/about/'},
       {displayText: 'Contact', uri: '/contact/'},
     ];
+
+    const footerLinks = [
+      {iconId: 'github', uri: 'https://github.com/michaelrivet'},
+      {iconId: 'linkedin', uri: 'https://www.linkedin.com/in/mikerivet'},
+    ];
+
     return (
       <div className="App">
         <Navbar links={navbarLinks} isFixed={this.state.isFixedHeader}></Navbar>
@@ -54,6 +61,8 @@ class App extends React.PureComponent {
         <Hero displayType="inverse">
           <div data-aos="fade-up">I am inverse stuff</div>
         </Hero>
+
+        <Footer links={footerLinks}/>
       </div>
     );
   }

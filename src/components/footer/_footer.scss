@@ -1,0 +1,27 @@
+.footer {
+    padding: 2rem 0;
+
+    i.link.icon {
+        position: relative;
+        top: 0px;
+        margin: 0 2rem;
+        transition: opacity .1s ease, background-color .5s ease, top .5s ease;
+    }
+
+    i.inverted.circular.icon:hover {
+        top: -5px;
+        background-color: #b5cc18!important;
+    }
+
+    .ui.grid>.row>.column.footer-name {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #1b1c1d;
+    }
+
+    .ui.grid>.row>.column.footer-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
