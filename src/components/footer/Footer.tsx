@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Icon, SemanticICONS } from 'semantic-ui-react';
+import { Container, Grid, Icon, SemanticICONS, List } from 'semantic-ui-react';
 
 import './_footer.scss';
 
@@ -17,22 +17,24 @@ class Footer extends React.PureComponent<FooterProps> {
         const { links } = this.props;
 
         return (
-            <Container className="footer">
-                <Grid>
+            <footer className="footer">
+                <Grid >
                    <Grid.Row>
                        <Grid.Column width={3} className="footer-name">
                             <h3>Michael Rivet</h3>
-                            <a href="/">Download Resume</a>
-                            <a href="tel:512-962-8225">512-962-8225</a>
+                            <List link>
+                                <List.Item as='a' href="/">Download Resume</List.Item>
+                                <List.Item as='a' href="tel:512-962-8225">512-962-8225</List.Item>
+                            </List>
                        </Grid.Column>
                        <Grid.Column width={13} className="footer-links">
                             {links.map((link, index) => (
-                                <a href={link.uri}><Icon key={index} link name={link.iconId as SemanticICONS} size="large" circular inverted /></a>
+                                <a key={index} href={link.uri} className="footer-links-link"><Icon link name={link.iconId as SemanticICONS} size="large" circular inverted /></a>
                             ))}
                        </Grid.Column>
                     </Grid.Row> 
                 </Grid>
-            </Container>
+            </footer>
         )
     }
 }
