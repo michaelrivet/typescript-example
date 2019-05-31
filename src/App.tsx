@@ -1,9 +1,14 @@
 import AOS from 'aos';
 import React from 'react';
 import { Container, Visibility, Header, Icon } from 'semantic-ui-react'
+import About from './components/about/About';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+
+/*
+  Inspriation from http://findmatthew.com/
+*/
 
 import './_app.scss';
 import 'aos/dist/aos.css';
@@ -47,10 +52,8 @@ class App extends React.PureComponent {
             <Icon name='angle double down' color="olive" size="large" className="viewMore" />
           </Hero>
         </Visibility>
-        <Hero isFullScreen displayType="primary">
-          <Container fluid>
-            <div data-aos="fade-up">I am primary stuff</div>
-          </Container>
+        <Hero displayType="primary">
+          <About/>
         </Hero>
         <Hero displayType="secondary">
           <div data-aos="fade-up">I am secondary stuff</div>
