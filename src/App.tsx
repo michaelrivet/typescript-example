@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import React from 'react';
-import { Container, Visibility, Header, Icon } from 'semantic-ui-react'
+import { Visibility, Header, Icon } from 'semantic-ui-react'
 import About from './components/about/About';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';

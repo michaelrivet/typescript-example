@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PageSectionProps, default as PageSection } from './PageSection';
+import PageSection from './PageSection';
 
 describe('the PageSection component', () => {
     it('renders', () => {
