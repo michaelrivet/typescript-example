@@ -1,0 +1,16 @@
+
+.pageSection {
+    margin-bottom: 2rem;
+
+    &-title {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 3rem;
+    }
+
+    &-subTitle {
+        font-size: 1.25rem;
+        font-weight: 200;
+        margin-bottom: 6rem;
+    }
+}
