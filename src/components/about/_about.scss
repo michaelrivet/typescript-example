@@ -13,3 +13,24 @@
         font-weight: 200;
     }
 }
+
+.experienceBar {
+    position: relative;
+    text-align: left;
+    background-color: #303030;
+    
+    &-title {
+        width: 200px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        background-color: #00ff00;
+    }
+
+    &-bar {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        background-color:#135f13;
+    }
+}

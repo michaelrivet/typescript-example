@@ -22,6 +22,24 @@ const AttentionGrabber: React.SFC<AttentionGrabberProps> = (props) => {
     );
 }
 
+interface ExperienceBarProps {
+    title: string,
+    range: number,
+    value: number,
+}
+
+const ExperienceBar: React.SFC<ExperienceBarProps> = (props) => {
+    const { title, range, value } = props;
+    const percentFilled = value / range * 100;
+
+    return (
+        <div className="experienceBar">
+            <div className="experienceBar-bar" style={ {width :`${percentFilled}%` }}></div>
+            <span className="experienceBar-title">title</span>
+        </div>
+    )
+}
+
 class About extends React.PureComponent {
     render() :React.ReactNode {
         return (
@@ -60,10 +78,15 @@ class About extends React.PureComponent {
                     <Grid.Row>
                         <Grid.Column width={8}>
                             <Image src="https://picsum.photos/id/103/1920/1080" />
-                        </Grid.Column>
-                        <Grid.Column width={8}>
                             <h3>Who am I?</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu quam iaculis, cursus erat nec, egestas lorem. Curabitur ex felis, auctor ut nisl sed, dictum euismod sem. Phasellus magna eros, cursus id libero in, fringilla lobortis nisi. Ut at vestibulum ex. Vestibulum non nunc cursus, fringilla ante id, lobortis lectus. Donec nec orci urna. Duis ut suscipit urna, vel dignissim sapien. Cras accumsan nisl eu neque tincidunt fringilla. Aenean condimentum viverra efficitur. In hac habitasse platea dictumst. Quisque vulputate dui tortor, ac vestibulum dolor porta in. Praesent varius semper nibh at varius. Ut lacinia, mi eget euismod elementum, quam ligula elementum nisi, vel suscipit nulla ante eu mauris. Pellentesque interdum fringilla mauris, in condimentum lacus pulvinar at.</p>
+                        </Grid.Column>
+                        <Grid.Column width={8}>
+                            <ExperienceBar
+                                title="Javascript"
+                                value={7}
+                                range={10}
+                            />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
